@@ -21,6 +21,16 @@
     Install the dependencies manually.
     Use the command-line program `build.sh`.
 
+## Testing/CI
+
+The repository runs automated checks in CI to ensure helper scripts remain healthy. You can run the same commands locally:
+
+- Lint shell scripts with `shellcheck scripts/*.sh`.
+- Perform a syntax check with `bash -n` for each script, e.g. `for script in scripts/*.sh; do bash -n "$script"; done`.
+- Verify Python helper dependencies are importable (the CI checks for `requests`) using `python3 - <<'PY'
+import requests
+PY`.
+
 ## Features
 
 - Integrate Magisk and GApps in a few clicks within minutes
